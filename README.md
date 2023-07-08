@@ -23,7 +23,7 @@
 # Vérification
 - npm run build
 
-# Lancerle serveur symfony
+# Lancer le serveur symfony
 - symfony serve -d
 - dans un onglet de navigateur : https://127.0.0.1:8000
 
