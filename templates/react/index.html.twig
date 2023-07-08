@@ -1,14 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ReactController!{% endblock %}
+{% block title %}ReactController{% endblock %}
 
 {% block body %}
-    <div class="bg-blue">
+    <div class="bg-black text-white">
         <div class="mx-auto max-w-7xl py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
             <div class="text-center">
                 <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Le titre du Réact controller</h1>
                 <p class="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400" >Lorem ipsum dolor sit amet, consectet</p>
-                <div {{ react_component('Hello', { 'fullName': 'Stéphane' }) }}></div>
+                <div {{ react_component('Hello', { 'fullName': 'Stéphane PIERRE' }) }}></div>
+                <div {{ react_component('Modal', { 'button': 'Le bouton de la modal' }) }}></div>
             </div>
         </div>
     </div>

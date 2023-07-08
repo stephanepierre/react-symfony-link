@@ -47,6 +47,27 @@ registerReactControllerComponents(require.context('./react/controllers', true, /
 ## Utilisation dans Twig de React.js
 - par exemple dans assets/react/controllers on a créé une props "{fullName}"
 ![prosp-fullName](image-3.png)
-- pour l'utiliser dans un fichier twig : {{ react_component('NOM FICHIER CONTROLLEUR REACT', <div { 'NOM DE LA PROPS': 'VALEUR DE LA PROPS' }) }} ></div>
-
+- pour l'utiliser dans un fichier twig : <div {{ react_component('NOM FICHIER CONTROLEUR REACT', { 'NOM DE LA PROPS': 'VALEUR DE LA PROPS' }) }} ></div>
+- Attention tous ce qui sera marqué entre <div>ICI</div> ne sera pas visible. Ceci n'affiche que le composant React 
 ![utilisation-props-dans-twig](image-4.png)
+
+
+## EXEMPLE AVEC UNE MODALE UTILISANT HEADLESS UI REACT
+
+# Installer Headless:
+- npm install @headlessui/react
+- Dans tailwind.config.js, ajouter : "./assets/react/controllers/*.jsx",
+
+# Création de la modale :
+- Dans assets/react/controllers créé un fichier Modal.jsx  qui contiendra la modale
+- Dedans ajouter le code trouvé sur cette URL pour la modale : https://headlessui.com/react/dialog
+- Ne pas oublié d'ajouter en haut : import React from 'react'
+- si on veut que la modale ne soit pas ouverte par defaut il faut passer useState()à false
+![useStateFalse](image-5.png)
+- pour changer dynamiquement le texte du bouton, on met "props" dans MyModal(), puis dans le bouton on crée une props:
+![propsButton](image-6.png)
+- on fait pareil pour le bouton de la modale ouverte plus bas dans le code
+- Dans index.html.twig on affiche le composant React comme avant. Le nom du Fichier(ici 'Modal'), puis le nom de la props (ici 'button') et le texte que l'on veut afficher dans le bouton (ici 'Le bouton de la modal')
+![afficher-bouton-modal](image-7.png)
+
+
